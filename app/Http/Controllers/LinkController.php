@@ -9,11 +9,7 @@ use Illuminate\Support\Str;
 
 class LinkController extends Controller
 {
-    //
-    public function index()
-    {
-        return view('index')->with('links', Link::orderBy('created_at', 'desc')->get()->take(5));
-    }
+
     //
     public function create()
     {
@@ -23,24 +19,20 @@ class LinkController extends Controller
     //
     public function store(LinkRequest $request)
     {
-        Link::create([
+        $link = Link::create([
             'url_long' => $request->url_long,
             'url_short' => $request->url_short ? $request->url_short : Str::random(6),
         ]);
-        return redirect()->route('links.index')->with('success', 'Link created successfully.');
+        return view('create')->with('link', $link);
     }
 
     //
     public function show($url_short): RedirectResponse
     {
+        if ($url_short == 'links') {
+            return redirect()->route('links.create');
+        }
         $link = Link::where('url_short', $url_short)->first();
         return redirect()->away($link->url_long);
-    }
-
-    //
-    public function destroy(Link $link)
-    {
-        $link->delete();
-        return redirect()->route('links.index')->with('success', 'Link deleted successfully.');
     }
 }

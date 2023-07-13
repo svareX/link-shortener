@@ -15,7 +15,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="antialiased text-white bg-gray-800">
+<body class="antialiased text-white">
     @if (session()->has('success'))
         <div class="alert alert-success">
             {{ session()->get('success') }}

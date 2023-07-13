@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [LinkController::class, 'create']);
 
-Route::resource('/links', LinkController::class)->except([
-    'edit', 'update', 'show'
+Route::resource('/links', LinkController::class)->only([
+    'create', 'store', 'show'
 ]);
 Route::get('/{url_short}', [LinkController::class, 'show'])->name('links.show');
