@@ -49,7 +49,7 @@
             </div>
 
             @if (isset($link))
-                <button data-clipboard-text="{{ route('links.redirect', $link->url_short) }}"
+                <button data-clipboard-text="{{ route('links.show', $link->url_short) }}" type="button"
                     class="btn text-2xl md:text-4xl p-2 md:p-3 block w-full rounded-xl bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Copy</button>
             @else
                 <button type="submit"
