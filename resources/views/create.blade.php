@@ -29,7 +29,7 @@
                     </svg>
                 </div>
                 <input type="url" id="url_long" name="url_long" required
-                    class="text-2xl md:text-5xl bg-gray-50 border border-gray-300 text-gray-900 rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 md:pl-24 p-2 mr-24 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="text-2xl md:text-5xl bg-gray-100 border border-gray-300 text-gray-900 rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full pl-12 md:pl-24 p-2 mr-24 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="https://steamcommunity.com/"
                     value="{{ old('url_long', isset($link) ? $link->url_long : '') }}">
             </div>
@@ -39,7 +39,7 @@
                     <span class="text-lg md:text-4xl text-blue-500">{{ env('APP_URL') }}/</span>
                 </div>
                 <input type="text" id="url_short" name="url_short"
-                    class="text-2xl md:text-5xl bg-gray-50 border border-gray-300 text-gray-900 rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full pl-[9.2rem] md:pl-[17rem] p-2 pt-1  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    class="text-2xl md:text-5xl bg-gray-100 border border-gray-300 text-gray-900 rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full pl-[9.2rem] md:pl-[17rem] p-2 pt-1  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="short-link" maxlength="16"
                     value="{{ old('url_short', isset($link) ? $link->url_short : '') }}">
             </div>
@@ -50,10 +50,10 @@
 
             @if (isset($link))
                 <button data-clipboard-text="{{ route('links.show', $link->url_short) }}" type="button"
-                    class="btn text-2xl md:text-4xl p-2 md:p-3 block w-full rounded-xl bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Copy</button>
+                    class="btn text-2xl md:text-4xl p-2 md:p-3 block w-full rounded-xl bg-gray-100 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Copy</button>
             @else
                 <button type="submit"
-                    class="text-2xl md:text-4xl p-2 md:p-3 block w-full rounded-xl bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Generate</button>
+                    class="text-2xl md:text-4xl p-2 md:p-3 block w-full rounded-xl bg-gray-100 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">Generate</button>
             @endif
         </form>
     </div>
