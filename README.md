@@ -14,7 +14,7 @@ My Link Shortener project is a very simple one. Inspired by many sites that allo
 ## Try it yourself!
 First you need to clone the repository.
 
-    git clone https://github.com/svareX/livewirechat
+    git clone https://github.com/svareX/link-shortener
 
 Then install all the package and dependencies.
 
